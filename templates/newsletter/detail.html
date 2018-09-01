@@ -1,0 +1,57 @@
+{% extends 'newsletter/base.html' %}
+
+{% block more %}
+
+    <div class="article">
+        {% if article.pub_date %}
+            <div class="date">
+                {{ article.pub_date }}
+            </div>
+        {% else %}
+            {% if user.is_staff %}
+                <a class="btn btn-default" href="{% url 'publish' pk=article.pk %}">Publish</a>
+            {% endif %}
+        {% endif %}
+        {% if user.is_authenticated %}
+            {% if perms.newsletter.change_article %}
+                <a class="btn btn-default" href="{% url 'article_edit' pk=article.pk %}"><span class="fas fa-edit"></span> </a>
+            {% endif %}
+            {% if perms.newsletter.delete_article %}
+                <a class="btn btn-default" href="{% url 'article_delete' pk=article.pk %}"><span class="fas fa-trash"></span></a>
+            {% endif %}
+        {% endif %}
+        <h1>{{ article.title_text }}</h1>
+        <h4>Written by: {{ article.author }}</h4>
+        <p>{{ article.article_text|linebreaksbr }}</p>
+    </div>
+
+    <hr>
+    {% if perms.newsletter.add_comment %}
+        <a class="btn btn-default" href="{% url 'add_comment_to_article' pk=article.pk %}">Add comment</a>
+    {% endif %}
+    {% for comment in article.comments.all %}
+        <!-- The perms... was user.is_authenticated before, but -->
+        <!-- working on permissions for community user groups. -->
+        {% if perms.newsletter.delete_comment or comment.approved_comment %}
+        <div class="comment">
+            <div class="date">
+                {{ comment.comment_date }}
+                {% if not comment.approved_comment %}
+                    {% if perms.newsletter.delete_comment %}
+                        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="fas fa-trash"></span></a>
+                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="fas fa-check"></span></a>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <strong>{{ comment.author }}</strong>
+            <p>{{ comment.comment_text|linebreaks }}</p>
+        </div>
+        {% endif %}
+
+    {% empty %}
+
+        <p>No comments here yet :(</p>
+
+    {% endfor %}
+
+{% endblock %}

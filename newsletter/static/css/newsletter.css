@@ -1,0 +1,36 @@
+h1 a {
+    color: #282560;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    padding-left: 15px;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #a8e5ff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.article {
+    margin-bottom: 70px;
+}
+
+/*#article-grid .col {*/
+    /*padding-left: -10px;*/
+    /*padding-right: -10px;*/
+/*}*/
+
+.post h1 a {
+    color: #282560
+}
+
+.post h1 a:visited {
+    color: #FF8700;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}

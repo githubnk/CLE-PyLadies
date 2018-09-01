@@ -1,0 +1,14 @@
+{% extends 'newsletter/base.html' %}
+
+{% block more %}
+
+    <h1>New comment</h1>
+
+    <!-- Form to create a comment -->
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+
+{% endblock %}

@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/', views.auth_login, name='login', kwargs={'next_page': '/'}),
     path('accounts/logout/', views.auth_logout, name='logout', kwargs={'next_page': '/'}),
-    # path('newsletter/', include('newsletter.urls')),
+    path('newsletter/', include('newsletter.urls')),
     path('', include('core.urls')),
 ]

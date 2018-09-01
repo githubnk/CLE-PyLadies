@@ -1,0 +1,28 @@
+{% extends 'global/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <!-- Hero image banner -->
+    <div class="row no-gutters hero-row">
+        <div class="col-12" id="header-img">
+            <img src="{% static 'img/MissionValuesBanner.png' %}" class="img-fluid" alt="" />
+        </div>
+    </div>
+
+
+    <!-- This is currently filler text -->
+    <div class="container" style="padding: 15px; background: #c8c8c8;">
+        <h3>Mission</h3>
+        <p>We're on a mission. However, the statement is currently under construction.</p>
+        <ul>
+            <h3>Values</h3>
+            <li><p>We value this.</p></li>
+            <li><p>We value that.</p></li>
+            <li><p>We value the other.</p></li>
+            <li><p>We value the othered.</p></li>
+        </ul>
+    </div>
+
+{% endblock %}

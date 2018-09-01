@@ -1,0 +1,49 @@
+{% extends 'global/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <!-- Hero image banner -->
+    <div class="row no-gutters hero-row">
+        <div class="col-12" id="header-img">
+            <img src="{% static 'img/LandingBanner.png' %}" class="img-fluid" alt="" />
+        </div>
+    </div>
+
+
+    <!-- This is currently filler text -->
+    <div class="container legible-text">
+        <div class="row">
+            <div class="col-lg-6">
+                <ul>
+                    <h3>We enthusiastically partner with:</h3>
+                    <li>The Cleveland Python User Group (CLEpy)</li>
+                    <li>PyLadies Global</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <ul>
+                    <h3>We are grateful to receive support from:</h3>
+                    <li>MidTown Tech Hive, meetup venue support</li>
+                    <li>The Python Software Foundation (PSF), financial support</li>
+                </ul>
+            </div>
+{#    Flux Makerspace?#}
+{#    MidTown Tech Hive#}
+        </div>
+        <div>
+            <a href="https://pythonbytes.fm/episodes/show/82/let-s-make-a-clear-python-3-statement">
+                Listen to the episode of Python Bytes where Michael & Brian shout out a welcome message for us!
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-12" style="text-align: center">
+            <p>Interested in partnering with us?</p>
+            <p>(Form goes here.)</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

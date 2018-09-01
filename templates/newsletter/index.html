@@ -1,0 +1,17 @@
+{% extends 'newsletter/base.html' %}
+
+{% block more %}
+    {% for article in articles %}
+        <div class="col-12 col-md-6 col-xl-4">
+            <div class="article">
+                <div class="date">
+                    <p>published: {{ article.pub_date }}</p>
+                </div>
+                <h1><a href="{% url 'detail' pk=article.pk %}">{{ article.title_text }}</a></h1>
+                <h4>Written by: {{ article.author }}</h4>
+                <p>{{ article.article_text|linebreaksbr }}</p>
+                <a href="{% url 'detail' pk=article.pk %}">Comments: {{ article.approved_comments.count }}</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

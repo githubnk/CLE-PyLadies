@@ -1,0 +1,52 @@
+{% extends 'global/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <!-- Hero image banner -->
+    <div class="row no-gutters hero-row">
+        <div class="col-12" id="header-img">
+            <img src="{% static 'img/AlwaysBeLearning.png' %}" class="img-fluid" alt="" />
+        </div>
+    </div>
+
+
+    <!-- This is currently filler text -->
+{#    People want to learn Python. Link to online content/tutorials.#}
+{#    Repeat event info relevant to learning.#}
+{#    Highlight community-made content/tutorials and local classes.#}
+
+    <div class="contribution container">
+        <div class="row">
+            {% block contribution %}
+                <div class="col-12">
+                    <!-- Work in progress disclaimer -->
+                    <p>
+                        No community content yet! Make a suggestion?
+                    </p>
+                    <p>
+                        (Form goes here.)
+                    </p>
+                </div>
+
+                <div class="col-12">
+
+                    <h4>In the meantime, Automate the Boring Stuff with Python.</h4>
+                </div>
+
+                <div class="col-12">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0-84-yl1fUnRuXGFe_F7qSH1LEnn9LkW&hl=en_US" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+                <div class="col-12">
+                <p>
+                    And check out more Python playlists on <a href="https://www.youtube.com/channel/UCrX6AAcxXO_-8gitJWdjkuw/playlists">our YouTube channel</a>!
+                </p>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+
+{% endblock %}

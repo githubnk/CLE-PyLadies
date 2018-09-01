@@ -1,0 +1,62 @@
+{% extends 'global/base.html' %}
+
+{% load staticfiles %}
+{% load core_extras %}
+
+{% block content %}
+
+    <!-- Hero image banner -->
+    <div class="row no-gutters hero-row">
+        <div class="col-12" id="header-img">
+            <img src="{% static 'img/EventsBanner.png' %}" class="img-fluid" alt="" />
+        </div>
+    </div>
+
+    <div class="container legible-text">
+    <h2>Upcoming Meetups</h2>
+    <ul>
+        {% for meetup_event in group_events %}
+            {% if meetup_event.announced == True and meetup_event.status == 'upcoming' and meetup_event.visibility == 'public' %}
+                <li>
+                    <h3><a href="{{ meetup_event.event_url }}">{{ meetup_event.name }}</a></h3>
+                    <p>{{ meetup_event.time|fromunix|date:"l, F d, Y" }} at {{ meetup_event.time|fromunix|time:"H:i a T" }}</p>
+                    <div class="row">
+                        <div class="col-12 col-md-9">
+
+                    <p>{% autoescape off %}{{ meetup_event.description }}{% endautoescape %}</p>
+                    <p>At {{ meetup_event.venue.name }} - {{ meetup_event.venue.address_1 }}, {{ meetup_event.venue.city }}, {{ meetup_event.venue.state }} {{meetup_event.venue.zip }}</p>
+
+                        </div>
+                    <div class="col-6 offset-3 col-md-3 mr-auto offset-md-0">
+                    <img src="{{ meetup_event.photo_url }}">
+                        </div>
+                        </div>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <h2>Past Meetups</h2>
+    <ul>
+        {% for meetup_event in group_events %}
+            {% if meetup_event.announced == True and meetup_event.status != 'upcoming' and meetup_event.visibility == 'public' %}
+                <li>
+                    <h3><a href="{{ meetup_event.event_url }}">{{ meetup_event.name }}</a></h3>
+                    <p>{{ meetup_event.local_date }} at {{ meetup_event.local_time }}</p>
+                    <div class="row">
+                        <div class="col-12 col-md-9">
+
+                    <p>{% autoescape off %}{{ meetup_event.description }}{% endautoescape %}</p>
+                    <p>At {{ meetup_event.venue.name }} - {{ meetup_event.venue.address_1 }}, {{ meetup_event.venue.city }}, {{ meetup_event.venue.state }} {{meetup_event.venue.zip }}</p>
+
+                        </div>
+                    <div class="col-6 offset-3 col-md-3 mr-auto offset-md-0">
+                    <img src="{{ meetup_event.photo_url }}">
+                        </div>
+                        </div>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    </div>
+{% endblock %}

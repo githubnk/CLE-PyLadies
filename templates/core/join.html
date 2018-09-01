@@ -1,0 +1,56 @@
+{% extends 'global/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <!-- Hero image banner -->
+    <div class="row no-gutters hero-row">
+        <div class="col-12" id="header-img">
+            <img src="{% static 'img/LandingBanner.png' %}" class="img-fluid" alt="" />
+        </div>
+    </div>
+
+
+    <!-- This is currently filler text -->
+    <div class="container legible-text">
+        <h2>How can I help?</h2>
+
+        <!-- Work in progress disclaimer -->
+        <p>This section is a work in progress that will be refined by the community.</p>
+
+{#        <p>Contact information, calls for action, needs, etc.</p>#}
+{#        <p>Repeat form here?</p>#}
+{#        <p>Login for admins eventually - and bloggers!</p>#}
+
+        <ul>
+            <h3>Ways to get involved:</h3>
+            <li><strong>Come to a meetup!</strong>
+                <p><em>We meet once a month.</em></p>
+            </li>
+            <li><strong>Watch the live stream!</strong>
+                <p><em>We want our remote engagement to be lively and meaningful.</em></p>
+            </li>
+            <li><strong>Help with a development task!</strong>
+                <p><em>Fix typos, edit copy, design/media, etc.</em></p>
+            </li>
+            <li><strong>Propose a long-form talk!</strong>
+                <p><em>This is a great place to give your first tech talk, practice a conference talk, or speak on a common interest.</em></p>
+            </li>
+            <li><strong>Propose a newsletter article!</strong>
+                <p><em>This can be a short-form blog or a formal article.</em></p>
+            </li>
+            <li><strong>Get creative!</strong>
+                <p><em>Whether your interest is photography or underwater basket weaving, if you can dream up a way to incorporate it with Python, we're interested.</em></p>
+            </li>
+            <li><strong>Support us!</strong>
+                <em>We are a non-profit and would love venue, food, in-kind, or financial support.</em></p>
+            </li>
+            <li><strong>Support PyLadies Global!</strong>
+                <p><em>Link for PyLadies donations on PSF.</em></p>
+            </li>
+            <li><strong>Support PSF!</strong></li>
+                <p><em>Link for Python donations.</em></p>
+            </ul>
+    </div>
+{% endblock %}

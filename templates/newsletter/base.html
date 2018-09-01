@@ -1,0 +1,32 @@
+{% extends 'global/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <div class="page-header" id="newsletter-header">
+        {% if user.is_authenticated %}
+            {% if perms.newsletter.add_article %}
+                <a href="{% url 'article_new' %}" class="top-menu"><span class="fas fa-plus"></span></a>
+            {% endif %}
+            {% if perms.newsletter.change_article %}
+                <a href="{% url 'drafts_list' %}" class="top-menu"><span class="fas fa-edit">Drafts</span></a>
+            {% endif %}
+            <p class="top-menu">Hello, {{ user.username }}!<small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+        {% else %}
+            <a href="{% url 'login' %}" class="top-menu"><span class="fas fa-lock"></span></a>
+        {% endif %}
+        <h1 class="text-center"><a href="/newsletter/">Cleveland PyLadies Newsletter</a></h1>
+    </div>
+
+    <div class="row no-gutters hero-row">
+        <div class="col-12" id="header-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wiki_Women_Editors_Project_-_Women_in_technology_2.4_%283%29.jpg" class="img-fluid" alt="" />
+        </div>
+    </div>
+        <div class="content container">
+            <div class="row">
+                {% block more %}
+                {% endblock %}
+            </div>
+        </div>
+{% endblock %}

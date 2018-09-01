@@ -1,0 +1,15 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Page not found' %}{% endblock %}
+
+{% block content %}
+
+    <h2>{% trans 'Page not found' %}</h2>
+
+    <div class="container">
+    <a href="https://xkcd.com/1969/"><img href="{% static 'img/xkcd_not_available.png' %}" /></a>
+    </div>
+    <p>{% trans "CUSTOM - We're sorry, but the requested page could not be found. Try another request?" %}</p>
+
+{% endblock %}
