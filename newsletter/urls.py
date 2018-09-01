@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.IndexView, name='article_list'),
+    path('accounts/profile/', views.IndexView, name='profile'),
     re_path(r'^article/(?P<pk>\d+)/$', views.DetailView, name='detail'),
     re_path(r'^article/new/$', views.CreateView, name='article_new'),
     re_path(r'^article/(?P<pk>\d+)/edit/$', views.EditView, name='article_edit'),
