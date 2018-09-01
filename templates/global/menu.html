@@ -29,8 +29,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="aboutDropdown">
                     <a class="dropdown-item {% active request about %}" href="{% url 'about' %}">General Information</a>
-                    <a class="dropdown-item {% active request coc %}" href="{% url 'coc' %}">Code of Conduct</a>
                     <a class="dropdown-item {% active request values %}" href="{% url 'values' %}">Mission and Values</a>
+                    <a class="dropdown-item {% active request coc %}" href="{% url 'coc' %}">Code of Conduct</a>
                 </div>
             </li>
             <li class="nav-item {% active request events %}">

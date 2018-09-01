@@ -89,7 +89,7 @@ footer {
     margin-right: -15px; /*Extends entire footer to full width.*/
     align-content: flex-end; /*Pins footer to end of views, but only with enough content.*/
     flex-shrink: 0; /*Review need in refactor*/
-    background-image: url("../img/cleveland_crop.jpg"); /*Replace this*/
+    /*background-image: url("../img/cleveland_crop.jpg"); !*Replace this*!*/
 }
 
 #foot-blurb {
