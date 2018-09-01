@@ -3,3 +3,10 @@ psycopg2==2.7.5
 pytz==2018.5
 whitenoise==4.0
 dj_database_url==0.5.0
+meetup-api==0.1.1
+idna==2.7
+certifi==2018.8.24
+chardet==3.0.4
+requests==2.19.1
+six==1.11.0
+urllib3==1.23

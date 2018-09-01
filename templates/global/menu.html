@@ -1,0 +1,59 @@
+{% load staticfiles %}
+{% load core_extras %}
+
+{% url 'index' as index %}
+{% url 'about' as about %}
+{% url 'coc' as coc %}
+{% url 'values' as values %}
+{% url 'events' as events %}
+{% url 'join' as join %}
+{% url 'resources' as resources %}
+{% url 'article_list' as article_list %}
+{% url 'partners' as partners %}
+
+<!--THE NAVBAR -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #3A3F42" id="top-nav">
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/pylady_geek_girl_small.png' %}" width="30" height="30">Cleveland PyLadies</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {% active request index %}">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    About
+                </a>
+                <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <a class="dropdown-item {% active request about %}" href="{% url 'about' %}">General Information</a>
+                    <a class="dropdown-item {% active request coc %}" href="{% url 'coc' %}">Code of Conduct</a>
+                    <a class="dropdown-item {% active request values %}" href="{% url 'values' %}">Mission and Values</a>
+                </div>
+            </li>
+            <li class="nav-item {% active request events %}">
+                <a class="nav-link" href="{% url 'events' %}">Events</a>
+            </li>
+            <li class="nav-item {% active request join %}">
+                <a class="nav-link" href="{% url 'join' %}">Get Involved</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Resources
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item {% active request resources %}" href="{% url 'resources' %}">Learn</a>
+                    <a class="dropdown-item {% active request article_list %}" href="{% url 'article_list' %}">Newsletter</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item {% active request partners %}" href="{% url 'partners' %}">Partners</a>
+                </div>
+            </li>
+        </ul>
+{#        <form class="form-inline my-2 my-lg-0">#}
+{#            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
+{#            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+{#        </form>#}
+    </div>
+</nav>

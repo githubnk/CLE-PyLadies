@@ -1,0 +1,143 @@
+{% extends 'global/base.html' %}
+
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Hero image banner -->
+    <div class="row no-gutters hero-row">
+        <div class="col-12" id="header-img">
+            <img src="{% static 'img/LandingBanner.png' %}" class="img-fluid" alt="" />
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="landing-view">
+        <div class="row">
+            <div class="col-12 col-lg-9" id="main-col">
+
+                <div class="jumbotron" id="welcome-tron">
+                    <h1 class="display-6">Cleveland PyLadies</h1>
+                    <p class="lead">
+                        PyLadies is an inclusive community centered around
+                        the Python programming language. Our focus is on promoting diversity,
+                        growth, and camaraderie in that space.
+                    </p>
+                    <hr class="my-4">
+                    <p>
+                        Whether you're new to programming or deep into
+                        your coding career, there's room for you in Cleveland PyLadies.
+                    </p>
+                    <p class="lead" id="jump-in-btn">
+                        <a class="btn btn-primary btn-lg btn-block" href="{% url 'events' %}" role="button">DIVE IN</a>
+                        <a class="btn btn-secondary btn-lg btn-block" href="{% url 'join' %}" role="button">PITCH IN</a>
+                    </p>
+                </div>
+            </div>
+
+{#            <!-- Trying out collapsing cards -->#}
+{#            <!-- Move this to an FAQ page -->#}
+{#            <h2>Want to know more?</h2>#}
+{#            <div id="accordion">#}
+{#              <div class="card">#}
+{#                <div class="card-header" id="headingOne">#}
+{#                  <h5 class="mb-0">#}
+{#                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">#}
+{#                      Collapsible Group Item #1#}
+{#                    </button>#}
+{#                  </h5>#}
+{#                </div>#}
+{##}
+{#                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">#}
+{#                  <div class="card-body">#}
+{#                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="card">#}
+{#                <div class="card-header" id="headingTwo">#}
+{#                  <h5 class="mb-0">#}
+{#                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">#}
+{#                      Collapsible Group Item #2#}
+{#                    </button>#}
+{#                  </h5>#}
+{#                </div>#}
+{#                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">#}
+{#                  <div class="card-body">#}
+{#                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="card">#}
+{#                <div class="card-header" id="headingThree">#}
+{#                  <h5 class="mb-0">#}
+{#                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">#}
+{#                      Collapsible Group Item #3#}
+{#                    </button>#}
+{#                  </h5>#}
+{#                </div>#}
+{#                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">#}
+{#                  <div class="card-body">#}
+{#                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+
+
+        <!-- Filler Sidebar content -->
+
+            <!-- When Meetup widget is here, offset-3, offset-lg-0 -->
+            <div class="col-6 offset-2 offset-sm-3 col-lg-3 mr-auto offset-lg-0" id="sidebar">
+
+{#                <div id="cta">#}
+{#                    <form>#}
+{#                        <div class="form-group">#}
+{#                            <label for="inputEmail">Email address</label>#}
+{#                            <input type="email" class="form-control" id="inputEmail" aria-described-by="emailHelp" placeholder="Enter email">#}
+{#                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
+{#                        </div>#}
+{#                        <div class="form-check">#}
+{#                            <input type="checkbox" class="form-check-input" id="involvementInterest">#}
+{#                            <label class="form-check-label" for="involvementInterest">Checkbox</label>#}
+{#                        </div>#}
+{#                        <button type="submit" class="btn btn-primary">Submit Form</button>#}
+{#                    </form>#}
+{#                </div>#}
+
+                <!--Content to drop below form on mobile. Switch vertical order? -->
+                <div class="row">
+
+
+                    <!-- Twitter widget - Offset is 3 when only widget, 0 when sharing row -->
+                    <div class="col-6 offset-3 col-lg-12-offset-0" id="twitter_feed">
+{#                        <h6>Recent Tweets</h6>#}
+                        <a class="twitter-timeline" data-width="450" data-height="550" data-theme="dark" href="https://twitter.com/CLEPyladies?ref_src=twsrc%5Etfw">Tweets by CLEPyladies</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+
+
+                    <!-- Update with Meetup widget -->
+{#                    <div class="col-6 offset-0 col-lg-12" id="upcomingMeetupsList">#}
+{#                        <h2>Social Title</h2>#}
+{##}
+    {#                    <iframe src="https://api.meetup.com/CLE-PyLadies/events?&sign=true&photo-host=public&scroll=next_upcoming&page=20">#}
+    {##}
+    {#                    </iframe>#}
+{##}
+{#                        <blockquote class="embedly-card">#}
+{#                            <h4>#}
+{#                                <a href="https://www.meetup.com/CLE-PyLadies">Cleveland PyLadies</a>#}
+{#                            </h4>#}
+{#                            <p>Do you...love Python? ...use Python? ...have an interest in learning because you've HEARD of Python? (So far, so good!)ANDDo you identify as a lady**?Then join Cleveland PyLadies!** PyGents are welcom</p>#}
+{#                        </blockquote>#}
+{#                        <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>#}
+{#                    </div>#}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
