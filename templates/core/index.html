@@ -5,11 +5,10 @@
 
 {% block content %}
 
-    <!-- Hero image banner -->
-    <div class="row no-gutters hero-row">
-        <div class="col-12 header-img">
-            <img src="{% static 'img/LandingBanner.png' %}" class="img-fluid" alt="" />
-        </div>
+    <!-- Custom image banner -->
+    <div class="custom-header" style="margin-top: auto;">
+    <div class="custom-header-img" style="background-image: url({% static 'img/LandingBanner.png' %});">
+    </div>
     </div>
 
     <!-- Main Content -->
@@ -18,7 +17,7 @@
 
             <!-- Trying out collapsing cards -->
             <!-- Move this to an FAQ page -->
-            <h2>Want to know more?</h2>
+            <h2>Welcome!</h2>
             <div id="accordion">
               <div class="card">
                 <div class="card-header" id="headingOne">

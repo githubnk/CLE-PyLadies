@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# BASE_URL = 'https://cle.pyladies.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+
     'core.apps.CoreConfig',
     'newsletter.apps.NewsletterConfig',
 ]
@@ -66,9 +69,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'debug': DEBUG,
         },
     },
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
@@ -107,8 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # # SSL/HTTPS
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = not DEBUG
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 #
@@ -156,3 +162,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static/local"),
+    # '/var/www/static',
+]
+
+STATICFILES_FINDERS = {
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+}
+
+DEFAULT_FROM_EMAIL = 'cle@pyladies.com'
