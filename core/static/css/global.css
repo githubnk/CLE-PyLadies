@@ -19,6 +19,10 @@ body {
     margin-right: 10px;
 }
 
+.header-img {
+    background-attachment: fixed;
+}
+
 @media (max-width: 992px) {
     .navbar-nav .nav-item {
         padding-left: 15px;
