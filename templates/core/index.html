@@ -14,27 +14,7 @@
 
     <!-- Main Content -->
     <div class="container" id="landing-view">
-        <div class="row">
-            <div class="col-12 col-lg-9" id="main-col">
 
-                <div class="jumbotron" id="welcome-tron">
-                    <h1 class="display-6">Cleveland PyLadies</h1>
-                    <p class="lead">
-                        PyLadies is an inclusive community centered around
-                        the Python programming language. Our focus is on promoting diversity,
-                        growth, and camaraderie in that space.
-                    </p>
-                    <hr class="my-4">
-                    <p>
-                        Whether you're new to programming or deep into
-                        your coding career, there's room for you in Cleveland PyLadies.
-                    </p>
-                    <p class="lead" id="jump-in-btn">
-                        <a class="btn btn-primary btn-lg btn-block" href="{% url 'events' %}" role="button">DIVE IN</a>
-                        <a class="btn btn-secondary btn-lg btn-block" href="{% url 'join' %}" role="button">PITCH IN</a>
-                    </p>
-                </div>
-            </div>
 
             <!-- Trying out collapsing cards -->
             <!-- Move this to an FAQ page -->
@@ -54,6 +34,8 @@
                     PyLadies is an inclusive community centered around
                         the Python programming language. Our focus is on promoting diversity,
                         growth, and camaraderie in that space.
+                      Whether you're new to programming or deep into
+                        your coding career, there's room for you in Cleveland PyLadies.
                   </div>
                 </div>
               </div>
@@ -87,38 +69,60 @@
                 </div>
               </div>
             </div>
+        <div class="row">
+            <div class="col-12 col-lg-9" id="main-col">
+
+                <div class="jumbotron" id="welcome-tron">
+                    <h1 class="display-6">Cleveland PyLadies</h1>
+                    <p class="lead">
+                        PyLadies is an inclusive community centered around
+                        the Python programming language. Our focus is on promoting diversity,
+                        growth, and camaraderie in that space.
+                    </p>
+                    <hr class="my-4">
+                    <p>
+                        Whether you're new to programming or deep into
+                        your coding career, there's room for you in Cleveland PyLadies.
+                    </p>
+                    <p class="lead" id="jump-in-btn">
+                        <a class="btn btn-primary btn-lg btn-block" href="{% url 'events' %}" role="button">DIVE IN</a>
+                        <a class="btn btn-secondary btn-lg btn-block" href="{% url 'join' %}" role="button">PITCH IN</a>
+                    </p>
+                </div>
+            </div>
 
 
         <!-- Filler Sidebar content -->
 
-            <!-- When Meetup widget is here, offset-3, offset-lg-0 -->
-            <div class="col-6 offset-2 offset-sm-3 col-lg-3 mr-auto offset-lg-0" id="sidebar">
-
-                <div id="cta">
-                    <form>
-                        <div class="form-group">
-                            <label for="inputEmail">Email address</label>
-                            <input type="email" class="form-control" id="inputEmail" aria-described-by="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="involvementInterest">
-                            <label class="form-check-label" for="involvementInterest">Checkbox</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit Form</button>
-                    </form>
-                </div>
+            <!-- When Meetup widget was here, offset-3, offset-lg-0 -->
+            <!-- Failed email box -->
+{#            <div class="col-6 offset-2 offset-sm-3 col-lg-3 mr-auto offset-lg-0" id="sidebar">#}
+{##}
+{#                <div id="cta">#}
+{#                    <form>#}
+{#                        <div class="form-group">#}
+{#                            <label for="inputEmail">Email address</label>#}
+{#                            <input type="email" class="form-control" id="inputEmail" aria-described-by="emailHelp" placeholder="Enter email">#}
+{#                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
+{#                        </div>#}
+{#                        <div class="form-check">#}
+{#                            <input type="checkbox" class="form-check-input" id="involvementInterest">#}
+{#                            <label class="form-check-label" for="involvementInterest">Checkbox</label>#}
+{#                        </div>#}
+{#                        <button type="submit" class="btn btn-primary">Submit Form</button>#}
+{#                    </form>#}
+{#                </div>#}
 
                 <!--Content to drop below form on mobile. Switch vertical order? -->
-                <div class="row">
-
-
-                    <!-- Twitter widget - Offset is 3 when only widget, 0 when sharing row -->
-                    <div class="col-6 offset-3 col-lg-12-offset-0" id="twitter_feed">
-                        <h6>Recent Tweets</h6>
-                        <a class="twitter-timeline" data-width="450" data-height="550" data-theme="dark" href="https://twitter.com/CLEPyladies?ref_src=twsrc%5Etfw">Tweets by CLEPyladies</a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </div>
+{#                <div class="row">#}
+{##}
+{##}
+{#                    <!-- Twitter widget - Offset is 3 when only widget, 0 when sharing row -->#}
+{#                    <div class="col-6 offset-3 col-lg-12-offset-0" id="twitter_feed">#}
+{#                        <h6>Recent Tweets</h6>#}
+{#                        <a class="twitter-timeline" data-width="450" data-height="550" data-theme="dark" href="https://twitter.com/CLEPyladies?ref_src=twsrc%5Etfw">Tweets by CLEPyladies</a>#}
+{#                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>#}
+{#                    </div>#}
 
 
                     <!-- Update with Meetup widget -->
